@@ -6,6 +6,7 @@ import androidx.compose.ui.unit.Constraints
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.crypto_currencyapp.common.Constants
 import com.example.crypto_currencyapp.common.Resource
 import com.example.crypto_currencyapp.domain.use_case.get_coin.GetCoinUseCase
 import com.example.crypto_currencyapp.domain.use_case.get_coins.GetCoinsUseCase
@@ -24,7 +25,7 @@ class CoinDetailViewModel @Inject constructor(
     val state: State<CoinDetailState> = _state
 
     init {
-        savedStateHandle.get<String>(Constraints.PARAM_COIN_ID)?.let{ coinId ->
+        savedStateHandle.get<String>(Constants.PARAM_COIN_ID)?.let{ coinId ->
             getCoin(coinId)
         }
     }
