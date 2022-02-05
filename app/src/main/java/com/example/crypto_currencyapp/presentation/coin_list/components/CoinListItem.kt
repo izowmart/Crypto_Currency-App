@@ -26,7 +26,7 @@ fun CoinListItem(
 ) {
     Row(modifier = androidx.compose.ui.Modifier
         .fillMaxWidth()
-        .clickable { onItemClick }
+        .clickable { onItemClick(coin) }
         .padding(20.dp)
     ) {
         Text(
